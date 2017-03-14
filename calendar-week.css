@@ -1,0 +1,67 @@
+.cw-calendar{
+	padding: 15px;
+	background-color: #000;
+}
+.cw-calendar .cw-calendar--title {
+    font-family: sans-serif;
+    font-weight: normal;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: .3rem
+}
+
+.cw-calendar .cw-calendar__body{
+	width: 100%;
+}
+
+.cw-calendar .cw-calendar__body thead {
+    color: #000;
+    background-color: #f2f2f2
+}
+
+.cw-calendar .cw-calendar__body thead th {
+    text-align: center;
+    padding: .3rem;
+    font-family: sans-serif;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: normal;
+    width: 14.285714286%;
+    border: 1px solid #f2f2f2
+}
+
+.cw-calendar .cw-calendar__body td {
+    text-align: right;
+    padding: .2rem .5rem;
+    border: 1px solid #f2f2f2;
+    height: 80px;
+    color: #faa21b
+}
+
+.cw-calendar .cw-calendar__body td.disabled {
+    color: #777;
+    border-color: #f2f2f2;
+    background-color: #333
+}
+
+.cw-calendar__nav {
+    margin: 0 0 15px 0
+}
+
+.cw-calendar__nav .cw-calendar--arrow {
+    font-size: 1.2rem;
+    color: #f2f2f2;
+    margin: 0 10px 0 0
+}
+
+.cw-calendar__nav .cw-calendar--arrow.cw-calendar--arrow-next {
+    float: right
+}
+
+.cw-calendar__nav:after {
+    clear: both;
+    display: table;
+    height: 0;
+    content: ''
+}
