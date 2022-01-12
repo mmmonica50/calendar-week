@@ -24,5 +24,5 @@ Weekly clandar vanilla javascript widget
 | **arrowPrev**    | Icon for navigation to previous weeks          | Fontawesome or HTML icon   | `&lt`        |
 | **arrowNext**    | Icon for navigation to next weeks              | Fontawesome or HTML icon   | `&gt`        |
 | **weekdayNames** | Weekday names                                  | Array                      | Domingo <br> Lunes <br> Martes <br> Miércoles <br> Jueves <br> Viernes <br> Sábado |
-| **monthNames**   | Month names                                    | Array                      | Enero <br> Febrero <br> Marzo <br> Abril <br> Mayo <br> Junio <br> Julio <br> Agosto <br> Septiembre <br> Octubre <br> Noviembre <br> Diciembre'] |
+| **monthNames**   | Month names                                    | Array                      | Enero <br> Febrero <br> Marzo <br> Abril <br> Mayo <br> Junio <br> Julio <br> Agosto <br> Septiembre <br> Octubre <br> Noviembre <br> Diciembre |
 | **onChooseDate** | Date select callback                           | Function                   | Not set      |
