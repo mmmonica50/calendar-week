@@ -1,6 +1,18 @@
 # Calendar week
 Weekly clandar vanilla javascript widget
 
+## Basic usage example
+
+```HTML
+  ...
+  <div id="calendar"></div>
+  ...
+```
+
+``` javascript
+  $("#calendar").cwCalendar();
+```
+
 
 | Option           | Description                                    | Values                     | Default      |
 |------------------|------------------------------------------------|----------------------------|--------------|
