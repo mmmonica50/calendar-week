@@ -69,39 +69,39 @@ if('undefined'==typeof jQuery){
         function _renderCalendar(weekDays = [], updateTitle = false) {
             let calendarHeader, calendarDays, calendarBodyHtml;
 
-            calendarHeader = `<thead><tr>`;
+            calendarHeader = `<div><div class="cw-calendar__days">`;
 
             if(opts.firstDay == 0){
                 for(let i=0;i<=opts.weekdayNames.length-1;i++){
-                    calendarHeader += `<th>${opts.weekdayNames[i]}</th>`;
+                    calendarHeader += `<div class="cw-calendar__days--name">${opts.weekdayNames[i]}</div>`;
                 }
             }else{
                 for(let i=1;i<=opts.weekdayNames.length-1;i++){
-                    calendarHeader += `<th>${opts.weekdayNames[i]}</th>`;
+                    calendarHeader += `<div>${opts.weekdayNames[i]}</div>`;
                 }
-                calendarHeader += `<th>${opts.weekdayNames[0]}</th>`;
+                calendarHeader += `<div>${opts.weekdayNames[0]}</div>`;
             }
 
-            calendarHeader += `</tr></thead>`;
+            calendarHeader += `</div></div>`;
 
-            calendarDays = `<tbody><tr>`;
+            calendarDays = `<div><div class="cw-calendar__days">`;
 
             opts.firstDay == 1 ? weekDays.splice(0, 1) : null;
             weekDays.map((myDay) => {
                 if(myDay[2] <= INITIAL_MONTH){
                     if(myDay[1] <= new Date().getDate()){
-                        calendarDays += `<td class="disabled"><span>${myDay[1]}</span></td>`;
+                        calendarDays += `<div class="cw-calendar__days--number disabled"><span>${myDay[1]}</span></div>`;
                     }else{
-                        calendarDays += `<td><a href="#" data-date="${myDay[3]}-${("0" + (myDay[2] + 1)).slice(-2)}-${myDay[1]}"><span>${myDay[1]}</span></a></td>`;
+                        calendarDays += `<div class="cw-calendar__days--number"><a href="#" data-date="${myDay[3]}-${("0" + (myDay[2] + 1)).slice(-2)}-${myDay[1]}"><span>${myDay[1]}</span></a></div>`;
                     }
                 }else{
-                    calendarDays += `<td><a href="#" data-date="${myDay[3]}-${("0" + (myDay[2] + 1)).slice(-2)}-${myDay[1]}"><span>${myDay[1]}</span></a></td>`;
+                    calendarDays += `<div class="cw-calendar__days--number"><a href="#" data-date="${myDay[3]}-${("0" + (myDay[2] + 1)).slice(-2)}-${myDay[1]}"><span>${myDay[1]}</span></a></div>`;
                 }
             });
 
-            calendarDays += `</tr></tbody>`;
+            calendarDays += `</div></div>`;
 
-            calendarBodyHtml = $(`<table class="cw-calendar__body">${calendarHeader} ${calendarDays}</table>`);
+            calendarBodyHtml = $(`<div class="cw-calendar__body">${calendarHeader} ${calendarDays}</div>`);
 
             if(updateTitle === true){
                 $('.cw-calendar').find('.cw-calendar--title').text(`${opts.monthNames[weekDays[0][2]]} ${weekDays[0][3]}`);
@@ -111,7 +111,7 @@ if('undefined'==typeof jQuery){
         }
 
         function _changeWeeks(count) {
-            $calendarContainer.find('table').remove();
+            $calendarContainer.find('.cw-calendar__body').remove();
             let newWeek = new Date().setDate(fullweek[0][1] + (7 * (count)));
             newWeek = new Date(newWeek)._weekArray(opts.firstDay);
             $calendarContainer.append(_renderCalendar(newWeek, true));

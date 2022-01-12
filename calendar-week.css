@@ -1,67 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    color: #eee;
+    background-color: #333;
+}
+
 .cw-calendar{
-	padding: 15px;
-	background-color: #000;
+	padding: .9em;
 }
 .cw-calendar .cw-calendar--title {
-    font-family: sans-serif;
-    font-weight: normal;
-    color: #f2f2f2;
     text-transform: uppercase;
-    letter-spacing: .3rem
+    letter-spacing: .3em
 }
 
 .cw-calendar .cw-calendar__body{
 	width: 100%;
 }
 
-.cw-calendar .cw-calendar__body thead {
+.cw-calendar__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: stretch;
     color: #000;
     background-color: #f2f2f2
 }
 
-.cw-calendar .cw-calendar__body thead th {
+.cw-calendar__days--name {
+    padding: .5em;
     text-align: center;
-    padding: .3rem;
-    font-family: sans-serif;
-    font-size: .8rem;
     text-transform: uppercase;
-    letter-spacing: .2rem;
-    font-weight: normal;
-    width: 14.285714286%;
+    letter-spacing: .2em;
     border: 1px solid #f2f2f2
 }
 
-.cw-calendar .cw-calendar__body td {
+.cw-calendar__days--number {
+    color: #f2f2f2;
     text-align: right;
-    padding: .2rem .5rem;
+    padding: 0 0 70% 0;
+    font-size: 1.4em;
     border: 1px solid #f2f2f2;
-    height: 80px;
+    height: 0;
+    background-color: #333;
     color: #faa21b
 }
 
-.cw-calendar .cw-calendar__body td.disabled {
-    color: #777;
+.cw-calendar__days--number a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.cw-calendar__days--number span {
+    display: inline-block;
+    padding: .5em;
+}
+
+.cw-calendar__days--number.disabled {
+    color: #999;
     border-color: #f2f2f2;
     background-color: #333
 }
 
 .cw-calendar__nav {
-    margin: 0 0 15px 0
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    margin: 1em 0;
+    padding: 0 .5em;
 }
 
-.cw-calendar__nav .cw-calendar--arrow {
-    font-size: 1.2rem;
+.cw-calendar--arrow {
+    font-size: 1.4em;
     color: #f2f2f2;
-    margin: 0 10px 0 0
 }
 
-.cw-calendar__nav .cw-calendar--arrow.cw-calendar--arrow-next {
-    float: right
+.cw-calendar--arrow-next {
+    justify-self: end;
 }
 
-.cw-calendar__nav:after {
-    clear: both;
-    display: table;
-    height: 0;
-    content: ''
+.cw-calendar--arrow a {
+    color: #f2f2f2;
 }
